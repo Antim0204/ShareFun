@@ -1,0 +1,54 @@
+import express from "express";
+import path from "path";
+import {requestPassswordReset, changePassword,resetPassword, verifyEmail, getUser, updateUser, friendRequest, getFriendRequest, acceptRequest, profileViews, suggestedFriends} from "../controllers/userController.js";
+import { resetPasswordLink } from "../utils/sendEmail.js";
+import userAuth from "../middleware/authMiddleware.js";
+import { profile } from "console";
+
+
+
+const router=express.Router();
+const __dirname=path.resolve(path.dirname(""));
+
+
+//when verification is success let user see 
+router.get("/verify/:userId/:token", verifyEmail);
+router.post("/request-passwordreset",requestPassswordReset);
+
+//PASSWORD RESET
+router.get("/reset-password/:userId/:token",resetPassword);
+
+router.post("/reset-password",changePassword);
+
+//get the user is post request
+router.post("/get-user/:id?",userAuth,getUser);
+
+//update the user is the put request
+router.put("/update-user",userAuth,updateUser);
+
+//friend request
+router.post("/friend-request",userAuth,friendRequest);
+router.post("/get-friend-request",userAuth,getFriendRequest);
+
+//accept /deny friend request
+router.post("/accept-request",userAuth,acceptRequest);
+
+//view profile
+router.post("/profile-view",userAuth,profileViews);
+
+
+//suggested friends
+router.post("/suggested-friends",userAuth,suggestedFriends);
+
+
+router.get("/verified", (req, res) => {  
+    res.sendFile(path.join(__dirname, "./views/build","index.html"));
+});
+
+router.get("/resetpassword", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/build","index.html"));
+});
+
+
+
+export default router;
