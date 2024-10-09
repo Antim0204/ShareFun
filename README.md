@@ -1,8 +1,13 @@
 # Getting Started with Create React App
 This project was bootstrapped with Create React App.
+# Create Account Page
+![Screenshot 2024-10-09 120256](https://github.com/user-attachments/assets/4b92c5ee-3e09-4ac8-987d-8c59926d19f8)
 
-Login page:
+# Login page
 ![Screenshot 2024-10-09 120241](https://github.com/user-attachments/assets/2d093dcb-9779-4dc5-81c5-ed0a0c8b9714)
+
+# Forgot Password Page
+![Screenshot 2024-10-09 120313](https://github.com/user-attachments/assets/fd213e7a-b7e3-4c51-95d8-54083d686ce1)
 
 # Available Scripts
 In the project directory, you can run:
@@ -77,4 +82,4 @@ CLINET SIDE
 
 The client or frontend also has .env filde in the root folder. Create an environment variable of name REACT_APP_CLOUDINARY_ID. This will store the cloudinary cloud name
 
-For Support, Contact: Email: codewavewithasante@gmail.com Telegram: https://t.me/Codewave_with_asante
+For Support, Contact: Email: 2021ume0204@iitjammu.ac.in 
